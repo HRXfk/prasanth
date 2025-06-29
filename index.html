@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWorth - Discover the True Economic Value of Nature</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'bounce': 'bounce 1s infinite',
+                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading spinner animation */
+        .spinner {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #10b981;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+    <!-- Hero Section -->
+    <div class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-900 via-green-800 to-emerald-700 overflow-hidden">
+        <!-- Background Image -->
+        <div 
+            class="absolute inset-0 bg-cover bg-center opacity-20"
+            style="background-image: url('https://images.unsplash.com/photo-1633158829875-e5316a358c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');"
+        ></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h1 class="text-4xl sm:text-6xl font-bold mb-6 leading-tight">
+                Discover the True <span class="text-yellow-400">Economic Value</span> of Nature
+            </h1>
+            
+            <p class="text-xl sm:text-2xl mb-8 text-green-100 max-w-3xl mx-auto">
+                EcoWorth makes the invisible visible - calculate the real monetary value of ecosystem services 
+                like carbon sequestration, water purification, and biodiversity conservation.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <button 
+                    onclick="scrollToCalculator()"
+                    class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                    Calculate Ecosystem Value
+                </button>
+                <button class="border-2 border-white hover:bg-white hover:text-green-900 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300">
+                    Learn More
+                </button>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-yellow-400">₹65,000</div>
+                    <div class="text-green-100 mt-2">Average forest value per hectare/year</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-yellow-400">₹96,000</div>
+                    <div class="text-green-100 mt-2">Average wetland value per hectare/year</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-yellow-400">₹48,000</div>
+                    <div class="text-green-100 mt-2">Average grassland value per hectare/year</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 text-yellow-400 opacity-60">
+            <svg class="w-8 h-8 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732L14.146 12.8l-1.179 4.456a1 1 0 01-1.934 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732L9.854 7.2l1.179-4.456A1 1 0 0112 2z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        
+        <div class="absolute bottom-32 right-16 text-green-300 opacity-60">
+            <svg class="w-12 h-12 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Ecosystem Services We Value
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our platform quantifies the hidden economic benefits that healthy ecosystems provide to society, 
+                    helping you understand the true cost of environmental degradation.
+                </p>
+            </div>
+            
+            <!-- Featured Image -->
+            <div class="mb-16">
+                <img 
+                    src="https://images.unsplash.com/photo-1686842803181-1c43ea309a3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                    alt="Diverse ecosystem showing multiple services"
+                    class="w-full h-96 object-cover rounded-2xl shadow-2xl"
+                />
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-4xl mb-4">🌳</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Carbon Sequestration</h3>
+                    <p class="text-gray-600">Measure how much CO2 your ecosystem captures and stores, contributing to climate regulation.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-4xl mb-4">💧</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Water Purification</h3>
+                    <p class="text-gray-600">Calculate the water filtration and quality improvement services provided by natural systems.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-4xl mb-4">🐝</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Pollination Services</h3>
+                    <p class="text-gray-600">Quantify the economic value of pollination supporting agriculture and biodiversity.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-4xl mb-4">🌱</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Soil Fertility</h3>
+                    <p class="text-gray-600">Evaluate soil formation, nutrient cycling, and erosion prevention services.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-4xl mb-4">🏞️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Recreation & Tourism</h3>
+                    <p class="text-gray-600">Assess the cultural and recreational value of natural areas for communities.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Real-time Calculations</h3>
+                    <p class="text-gray-600">Get instant, research-based valuations tailored to Indian ecosystem conditions.</p>
+                </div>
+            </div>
+            
+            <!-- Educational Content -->
+            <div class="mt-20 bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl p-8 lg:p-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">
+                            Why Ecosystem Valuation Matters
+                        </h3>
+                        <div class="space-y-4 text-gray-700">
+                            <p>
+                                <strong>For Policymakers:</strong> Make informed decisions about land use, conservation investments, 
+                                and environmental regulations based on economic evidence.
+                            </p>
+                            <p>
+                                <strong>For Farmers:</strong> Understand the additional value your land provides beyond crops, 
+                                supporting arguments for sustainable agriculture subsidies.
+                            </p>
+                            <p>
+                                <strong>For Researchers:</strong> Access research-based valuation methods adapted for Indian 
+                                ecosystem conditions and economic contexts.
+                            </p>
+                            <p>
+                                <strong>For Communities:</strong> Demonstrate the economic importance of local natural areas 
+                                to support conservation efforts and eco-tourism development.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">Quick Facts</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Global ecosystem services value:</span>
+                                <span class="font-bold text-green-600">$125 trillion/year</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">India's forest cover:</span>
+                                <span class="font-bold text-green-600">24.56% of land area</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Wetlands in India:</span>
+                                <span class="font-bold text-green-600">15.3 million hectares</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Economic loss from degradation:</span>
+                                <span class="font-bold text-red-600">3-7% of GDP annually</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-green-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Real-time Ecosystem Value Calculator
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Calculate the annual economic value of ecosystem services for your area
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Calculator Form -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8">
+                    <form id="calculatorForm">
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Land Area (hectares) *
+                                </label>
+                                <input
+                                    type="number"
+                                    id="landArea"
+                                    name="landArea"
+                                    step="0.01"
+                                    min="0.01"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    placeholder="Enter area in hectares"
+                                    required
+                                />
+                                <p class="text-sm text-gray-500 mt-1">1 hectare = 2.47 acres = 10,000 sq meters</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Ecosystem Type *
+                                </label>
+                                <select
+                                    id="ecosystemType"
+                                    name="ecosystemType"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required
+                                >
+                                    <option value="">Select ecosystem type</option>
+                                    <option value="forest">Forest - Tropical, temperate, or boreal forests</option>
+                                    <option value="wetland">Wetland - Marshes, swamps, rivers, and lakes</option>
+                                    <option value="grassland">Grassland - Natural grasslands and savannas</option>
+                                    <option value="agricultural">Agricultural Land - Farmland and crop areas</option>
+                                    <option value="urban_green">Urban Green Space - Parks, gardens, and urban forests</option>
+                                </select>
+                                <p id="ecosystemDescription" class="text-sm text-gray-500 mt-1"></p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Land Use Condition *
+                                </label>
+                                <select
+                                    id="landUse"
+                                    name="landUse"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    required
+                                >
+                                    <option value="">Select land use condition</option>
+                                    <option value="pristine">Pristine/Natural - Undisturbed natural ecosystem</option>
+                                    <option value="well_managed">Well Managed - Protected or sustainably managed</option>
+                                    <option value="moderately_degraded">Moderately Degraded - Some human impact but recoverable</option>
+                                    <option value="heavily_degraded">Heavily Degraded - Significant degradation requiring restoration</option>
+                                    <option value="converted">Converted - Heavily modified or developed land</option>
+                                </select>
+                                <p id="landUseDescription" class="text-sm text-gray-500 mt-1"></p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Region
+                                </label>
+                                <input
+                                    type="text"
+                                    id="region"
+                                    name="region"
+                                    value="India"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                    placeholder="Region (e.g., India, Maharashtra)"
+                                />
+                            </div>
+                        </div>
+
+                        <div id="errorMessage" class="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg hidden">
+                        </div>
+
+                        <button
+                            type="submit"
+                            id="calculateButton"
+                            class="w-full mt-8 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            <span id="buttonText">Calculate Ecosystem Value</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Results Display -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8">
+                    <div id="resultsContainer">
+                        <div id="defaultView" class="text-center py-12">
+                            <div class="text-6xl mb-4">🌱</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                                Ready to Calculate?
+                            </h3>
+                            <p class="text-gray-600">
+                                Fill in the form on the left to discover the economic value of your ecosystem. 
+                                Our calculator uses research-based methods to provide realistic estimates 
+                                adapted for Indian conditions.
+                            </p>
+                            
+                            <div class="mt-8 space-y-4">
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-green-800 mb-2">💡 Pro Tip</h4>
+                                    <p class="text-sm text-green-700">
+                                        Start with a small area (1-10 hectares) to understand the per-hectare values, 
+                                        then scale up your calculations for larger areas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="resultsView" class="hidden">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                                Ecosystem Valuation Results
+                            </h3>
+                            
+                            <div id="totalValueCard" class="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 rounded-lg mb-6">
+                                <div class="text-center">
+                                    <div id="totalValue" class="text-3xl font-bold mb-2"></div>
+                                    <div id="totalValueSubtext" class="text-green-100"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-4">
+                                    Breakdown by Ecosystem Service:
+                                </h4>
+                                
+                                <div id="servicesBreakdown"></div>
+                            </div>
+
+                            <div class="mt-8 p-4 bg-blue-50 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2">Key Insights:</h5>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• Values are based on research-adapted multipliers for Indian ecosystems</li>
+                                    <li>• Annual values may vary based on seasonal factors and local conditions</li>
+                                    <li>• These estimates help quantify the "hidden" benefits of healthy ecosystems</li>
+                                    <li>• Use these values to support conservation and policy decisions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">EcoWorth</h3>
+                    <p class="text-gray-300 mb-4">
+                        Making the economic value of nature visible and tangible. 
+                        Supporting informed decisions for a sustainable future.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div class="bg-green-600 px-3 py-1 rounded-full text-sm">
+                            🌱 Research-Based
+                        </div>
+                        <div class="bg-blue-600 px-3 py-1 rounded-full text-sm">
+                            🇮🇳 India-Focused
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Methodology</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Research Papers</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-green-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Partnerships</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 EcoWorth. Built with 💚 for a sustainable future.
+                    </p>
+                    <div class="mt-4 md:mt-0">
+                        <p class="text-gray-400 text-sm">
+                            Values are estimates based on ecological economics research • Use for educational and planning purposes
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
