@@ -3,7 +3,7 @@ let ecosystemTypes = [];
 let landUseTypes = [];
 
 // API Configuration
-const BACKEND_URL = 'https://3cc151fd-5c85-414d-88c8-04f6d207d18e.preview.emergentagent.com';
+const BACKEND_URL = 'https://a80120b8-6356-4b99-b55f-5a588f6d5efe.preview.emergentagent.com';
 const API = `${BACKEND_URL}/api`;
 
 // DOM Elements
