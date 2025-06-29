@@ -119,28 +119,34 @@ backend:
         comment: "Basic FastAPI server with MongoDB connection and sample StatusCheck endpoints working"
 
   - task: "Ecosystem value calculation API endpoints"
-    implemented: false
-    working: "NA"
+    implemented: true
+    working: true
     file: "backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Need to implement ecosystem valuation calculation endpoints with research-based multipliers for Indian ecosystems"
+      - working: true
+        agent: "main"
+        comment: "Implemented calculate_ecosystem_values function with research-based multipliers for 5 ecosystem types (forest, wetland, grassland, agricultural, urban_green) and 5 land use conditions. Added POST /calculate-ecosystem-value and GET /ecosystem-types endpoints."
 
   - task: "Ecosystem data models and validation"
-    implemented: false
-    working: "NA"
+    implemented: true
+    working: true
     file: "backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Need to create Pydantic models for ecosystem inputs and calculated values"
+      - working: true
+        agent: "main"
+        comment: "Created EcosystemValuationInput, EcosystemService, and EcosystemValuationResult Pydantic models with proper validation and field descriptions"
 
 frontend:
   - task: "EcoWorth landing page design"
