@@ -124,7 +124,7 @@ backend:
     file: "backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
@@ -132,6 +132,9 @@ backend:
       - working: true
         agent: "main"
         comment: "Implemented calculate_ecosystem_values function with research-based multipliers for 5 ecosystem types (forest, wetland, grassland, agricultural, urban_green) and 5 land use conditions. Added POST /calculate-ecosystem-value and GET /ecosystem-types endpoints."
+      - working: true
+        agent: "testing"
+        comment: "API endpoints are working correctly. GET /api/ecosystem-types returns ecosystem and land use type options successfully. POST /api/calculate-ecosystem-value accepts land area, ecosystem type, and land use data and returns calculated values correctly."
 
   - task: "Ecosystem data models and validation"
     implemented: true
