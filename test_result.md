@@ -191,7 +191,7 @@ frontend:
     file: "frontend/src/components/CalculatorSection.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
@@ -199,6 +199,9 @@ frontend:
       - working: true
         agent: "main"
         comment: "Implemented comprehensive results display showing total annual value and breakdown by ecosystem service with descriptions, per-hectare values, and total values in INR currency format"
+      - working: true
+        agent: "testing"
+        comment: "Results display works correctly, showing total annual value (₹2,60,000 for 5 hectares of well-managed forest) and breakdown by ecosystem service (Carbon Sequestration, Water Purification, Soil Fertility, Pollination, Recreation). Each service shows per-hectare value and total value in INR format. Different ecosystem types (forest, wetland) produce different results as expected (₹4,80,000 for pristine wetland)."
 
   - task: "UI styling and responsiveness"
     implemented: true
