@@ -155,7 +155,7 @@ frontend:
     file: "frontend/src/components/HomePage.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
@@ -163,6 +163,9 @@ frontend:
       - working: true
         agent: "main"
         comment: "Created complete EcoWorth landing page with HeroSection, FeaturesSection, CalculatorSection, and Footer. Includes beautiful gradients, ecosystem images, educational content, and statistics."
+      - working: true
+        agent: "testing"
+        comment: "Landing page displays correctly with hero section showing EcoWorth branding, statistics section showing ecosystem values (₹65,000 for forest, ₹96,000 for wetland, ₹48,000 for grassland), and features section explaining ecosystem services. The 'Calculate Ecosystem Value' button works correctly, scrolling to the calculator section."
 
   - task: "Real-time Value Calculator interface"
     implemented: true
