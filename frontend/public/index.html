@@ -1,151 +1,310 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWorth - Discover the True Economic Value of Nature</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Discover the True <span class="highlight">Economic Value</span> of Nature
+            </h1>
+            
+            <p class="hero-subtitle">
+                EcoWorth makes the invisible visible - calculate the real monetary value of ecosystem services 
+                like carbon sequestration, water purification, and biodiversity conservation.
+            </p>
+            
+            <div class="hero-buttons">
+                <button id="calculateBtn" class="btn-primary">
+                    Calculate Ecosystem Value
+                </button>
+                <button class="btn-secondary">
+                    Learn More
+                </button>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">₹65,000</div>
+                    <div class="stat-label">Average forest value per hectare/year</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">₹96,000</div>
+                    <div class="stat-label">Average wetland value per hectare/year</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">₹48,000</div>
+                    <div class="stat-label">Average grassland value per hectare/year</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating elements -->
+        <div class="floating-element floating-1">
+            <svg width="32" height="32" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732L14.146 12.8l-1.179 4.456a1 1 0 01-1.934 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732L9.854 7.2l1.179-4.456A1 1 0 0112 2z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        
+        <div class="floating-element floating-2">
+            <svg width="48" height="48" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+        </div>
+    </section>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Emergent | Fullstack App</title>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <a
-            id="emergent-badge"
-            target="_blank"
-            href="https://app.emergent.sh/?utm_source=emergent-badge"
-            style="
-                display: flex !important;
-                align-items: center !important;
-                position: fixed !important;
-                bottom: 20px;
-                right: 20px;
-                text-decoration: none;
-                padding: 6px 10px;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
-                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                z-index: 9999 !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-                border-radius: 8px !important;
-                background-color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            "
-        >
-            <div
-                style="display: flex; flex-direction: row; align-items: center"
-            >
-                <img
-                    style="width: 20px; height: 20px; margin-right: 8px"
-                    src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
-                />
-                <p
-                    style="
-                        color: #000000;
-                        font-family: -apple-system, BlinkMacSystemFont,
-                            &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu,
-                            Cantarell, &quot;Open Sans&quot;,
-                            &quot;Helvetica Neue&quot;, sans-serif !important;
-                        font-size: 12px !important;
-                        align-items: center;
-                        margin-bottom: 0;
-                    "
-                >
-                    Made with Emergent
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ecosystem Services We Value</h2>
+                <p class="section-subtitle">
+                    Our platform quantifies the hidden economic benefits that healthy ecosystems provide to society, 
+                    helping you understand the true cost of environmental degradation.
                 </p>
             </div>
-        </a>
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-            });
-        </script>
-    </body>
+            
+            <!-- Featured Image -->
+            <div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1686842803181-1c43ea309a3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                     alt="Diverse ecosystem showing multiple services">
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌳</div>
+                    <h3 class="feature-title">Carbon Sequestration</h3>
+                    <p class="feature-description">Measure how much CO2 your ecosystem captures and stores, contributing to climate regulation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3 class="feature-title">Water Purification</h3>
+                    <p class="feature-description">Calculate the water filtration and quality improvement services provided by natural systems.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🐝</div>
+                    <h3 class="feature-title">Pollination Services</h3>
+                    <p class="feature-description">Quantify the economic value of pollination supporting agriculture and biodiversity.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="feature-title">Soil Fertility</h3>
+                    <p class="feature-description">Evaluate soil formation, nutrient cycling, and erosion prevention services.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏞️</div>
+                    <h3 class="feature-title">Recreation & Tourism</h3>
+                    <p class="feature-description">Assess the cultural and recreational value of natural areas for communities.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Real-time Calculations</h3>
+                    <p class="feature-description">Get instant, research-based valuations tailored to Indian ecosystem conditions.</p>
+                </div>
+            </div>
+            
+            <!-- Educational Content -->
+            <div class="educational-content">
+                <div class="education-grid">
+                    <div class="education-text">
+                        <h3 class="education-title">Why Ecosystem Valuation Matters</h3>
+                        <div class="education-points">
+                            <p><strong>For Policymakers:</strong> Make informed decisions about land use, conservation investments, and environmental regulations based on economic evidence.</p>
+                            <p><strong>For Farmers:</strong> Understand the additional value your land provides beyond crops, supporting arguments for sustainable agriculture subsidies.</p>
+                            <p><strong>For Researchers:</strong> Access research-based valuation methods adapted for Indian ecosystem conditions and economic contexts.</p>
+                            <p><strong>For Communities:</strong> Demonstrate the economic importance of local natural areas to support conservation efforts and eco-tourism development.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-facts">
+                        <h4 class="facts-title">Quick Facts</h4>
+                        <div class="facts-list">
+                            <div class="fact-item">
+                                <span class="fact-label">Global ecosystem services value:</span>
+                                <span class="fact-value">$125 trillion/year</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">India's forest cover:</span>
+                                <span class="fact-value">24.56% of land area</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Wetlands in India:</span>
+                                <span class="fact-value">15.3 million hectares</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Economic loss from degradation:</span>
+                                <span class="fact-value loss">3-7% of GDP annually</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator-section" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Real-time Ecosystem Value Calculator</h2>
+                <p class="section-subtitle">Calculate the annual economic value of ecosystem services for your area</p>
+            </div>
+
+            <div class="calculator-grid">
+                <!-- Calculator Form -->
+                <div class="calculator-form">
+                    <form id="ecosystemForm">
+                        <div class="form-group">
+                            <label for="landArea">Land Area (hectares) *</label>
+                            <input type="number" id="landArea" name="land_area" step="0.01" min="0.01" required placeholder="Enter area in hectares">
+                            <p class="form-help">1 hectare = 2.47 acres = 10,000 sq meters</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ecosystemType">Ecosystem Type *</label>
+                            <select id="ecosystemType" name="ecosystem_type" required>
+                                <option value="">Select ecosystem type</option>
+                            </select>
+                            <p id="ecosystemDescription" class="form-help"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="landUse">Land Use Condition *</label>
+                            <select id="landUse" name="land_use" required>
+                                <option value="">Select land use condition</option>
+                            </select>
+                            <p id="landUseDescription" class="form-help"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="region">Region</label>
+                            <input type="text" id="region" name="region" value="India" placeholder="Region (e.g., India, Maharashtra)">
+                        </div>
+
+                        <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+                        <button type="submit" id="calculateButton" class="btn-calculate">
+                            <span id="buttonText">Calculate Ecosystem Value</span>
+                            <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                                <div class="spinner"></div>
+                                Calculating...
+                            </div>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Results Display -->
+                <div class="results-display">
+                    <div id="resultsContainer" style="display: none;">
+                        <h3 class="results-title">Ecosystem Valuation Results</h3>
+                        
+                        <div id="totalValue" class="total-value">
+                            <div class="total-amount"></div>
+                            <div class="total-label"></div>
+                        </div>
+
+                        <div class="services-breakdown">
+                            <h4 class="breakdown-title">Breakdown by Ecosystem Service:</h4>
+                            <div id="servicesList"></div>
+                        </div>
+
+                        <div class="insights">
+                            <h5 class="insights-title">Key Insights:</h5>
+                            <ul class="insights-list">
+                                <li>Values are based on research-adapted multipliers for Indian ecosystems</li>
+                                <li>Annual values may vary based on seasonal factors and local conditions</li>
+                                <li>These estimates help quantify the "hidden" benefits of healthy ecosystems</li>
+                                <li>Use these values to support conservation and policy decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="placeholderContent">
+                        <div class="placeholder-content">
+                            <div class="placeholder-icon">🌱</div>
+                            <h3 class="placeholder-title">Ready to Calculate?</h3>
+                            <p class="placeholder-text">
+                                Fill in the form on the left to discover the economic value of your ecosystem. 
+                                Our calculator uses research-based methods to provide realistic estimates 
+                                adapted for Indian conditions.
+                            </p>
+                            
+                            <div class="pro-tip">
+                                <h4 class="tip-title">💡 Pro Tip</h4>
+                                <p class="tip-text">
+                                    Start with a small area (1-10 hectares) to understand the per-hectare values, 
+                                    then scale up your calculations for larger areas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <h3 class="footer-title">EcoWorth</h3>
+                    <p class="footer-description">
+                        Making the economic value of nature visible and tangible. 
+                        Supporting informed decisions for a sustainable future.
+                    </p>
+                    <div class="footer-badges">
+                        <div class="badge">🌱 Research-Based</div>
+                        <div class="badge">🇮🇳 India-Focused</div>
+                    </div>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Methodology</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 EcoWorth. Built with 💚 for a sustainable future.</p>
+                <p class="disclaimer">Values are estimates based on ecological economics research • Use for educational and planning purposes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
