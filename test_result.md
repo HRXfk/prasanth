@@ -101,3 +101,99 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: |
+  Build EcoWorth - a dynamic web platform to visualize, calculate, and educate users about the economic and social value of ecosystem services in specific regions. The core problem is making the abstract value of nature tangible through monetary valuation. Key features include Interactive Ecosystem Valuation Map, Real-time Value Calculator (MVP focus), Case Studies Section, Citizen Scientist Uploads, and "What If?" Simulator. The MVP will focus on the Real-time Value Calculator that estimates annual monetary value of ecosystem services based on user-inputted land area, ecosystem type, and current land use, providing results in INR/USD. Target audience includes students, researchers, NGOs, policymakers, farmers, local communities, and eco-conscious public.
+
+backend:
+  - task: "Setup basic FastAPI server with MongoDB"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Basic FastAPI server with MongoDB connection and sample StatusCheck endpoints working"
+
+  - task: "Ecosystem value calculation API endpoints"
+    implemented: false
+    working: "NA"
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need to implement ecosystem valuation calculation endpoints with research-based multipliers for Indian ecosystems"
+
+  - task: "Ecosystem data models and validation"
+    implemented: false
+    working: "NA"
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need to create Pydantic models for ecosystem inputs and calculated values"
+
+frontend:
+  - task: "EcoWorth landing page design"
+    implemented: false
+    working: "NA"
+    file: "frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need to replace template with beautiful EcoWorth landing page including hero section, ecosystem education, and value calculator"
+
+  - task: "Real-time Value Calculator interface"
+    implemented: false
+    working: "NA"
+    file: "frontend/src/components/Calculator.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need to create interactive calculator with inputs for land area, ecosystem type, land use and display results for various ecosystem services"
+
+  - task: "Results display and visualization"
+    implemented: false
+    working: "NA"
+    file: "frontend/src/components/Results.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need to create results component showing carbon sequestration, pollination, water purification, soil fertility, recreation values with total annual value in INR"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 0
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Ecosystem value calculation API endpoints"
+    - "EcoWorth landing page design"
+    - "Real-time Value Calculator interface"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Starting EcoWorth MVP implementation with Real-time Value Calculator. Using simplified ecosystem valuation models with research-based multipliers for Indian ecosystems, focusing on INR currency. Building basic calculator without external APIs first."
