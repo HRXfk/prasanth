@@ -173,7 +173,7 @@ frontend:
     file: "frontend/src/components/CalculatorSection.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
@@ -181,6 +181,9 @@ frontend:
       - working: true
         agent: "main"
         comment: "Implemented interactive calculator with form inputs (land area, ecosystem type, land use, region), API integration, loading states, error handling, and responsive design"
+      - working: true
+        agent: "testing"
+        comment: "Calculator interface works correctly with all required inputs (land area, ecosystem type, land use condition, region). Form validation works using browser's built-in validation. API integration is working correctly with ecosystem types and land use options loading in the dropdown. The form submits data to the backend API successfully."
 
   - task: "Results display and visualization"
     implemented: true
