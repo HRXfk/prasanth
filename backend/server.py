@@ -35,6 +35,26 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# EcoWorth Models
+class EcosystemValuationInput(BaseModel):
+    land_area: float = Field(..., gt=0, description="Land area in hectares")
+    ecosystem_type: str = Field(..., description="Type of ecosystem")
+    land_use: str = Field(..., description="Current land use")
+    region: str = Field(default="India", description="Geographic region")
+
+class EcosystemService(BaseModel):
+    service_name: str
+    value_per_hectare_inr: float
+    total_value_inr: float
+    description: str
+
+class EcosystemValuationResult(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    input_data: EcosystemValuationInput
+    services: List[EcosystemService]
+    total_annual_value_inr: float
+    calculated_at: datetime = Field(default_factory=datetime.utcnow)
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
